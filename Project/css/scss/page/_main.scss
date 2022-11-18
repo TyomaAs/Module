@@ -1,0 +1,136 @@
+.main {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 400px;
+	.container {
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	&__heading {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__text {
+		font-size: 52px;
+	}
+	&__button {
+		width: 150px;
+		height: 50px;
+		border-radius: 25px;
+		border: 1px solid $white;
+		background: $btn-gradient;
+		color: $white;
+		margin-top: 30px;
+		font-size: 18px;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			background: $btn-gradient-hovered;
+			box-shadow: 0px 0px 10px $white;
+			transform: scale(1.2);
+		}
+	}
+	&__car {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		.car {
+			&__info {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				row-gap: 8px;
+				position: relative;
+				max-width: 200px;
+				&:first-child {
+					align-items: flex-start;
+				}
+				&:last-child {
+					align-items: flex-end;
+					flex: 1 0 130px;
+				}
+			}
+			&__heading {
+				font-weight: 300;
+				font-size: 26px;
+				line-height: 30px;
+				color: $dim-red;
+				font-style: italic;
+			}
+			&__value {
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 23px;
+				&-sub {
+					font-weight: 300;
+					font-size: 18px;
+					line-height: 21px;
+				}
+			}
+			&__image {
+				flex: 1 auto;
+			}
+		}
+	}
+	@media screen and (max-width: $laptop-max) {
+		&__text {
+			font-size: 42px;
+		}
+		&__car {
+			.car {
+				&__info {
+					position: absolute;
+					padding: 10px;
+					border-radius: 20px;
+					top: 0;
+					backdrop-filter: blur(5px);
+					background-color: #25252577;
+					&:first-child {
+						left: 0;
+					}
+					&:last-child {
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width: $tablet-max) {
+		&__text {
+			font-size: 30px;
+			text-align: center;
+		}
+		&__button {
+			margin-top: 15px;
+			width: 120px;
+			height: 40px;
+		}
+		&__car {
+			margin: 30px 0 50px 0;
+			.car {
+				&__info {
+					top: 100%;
+				}
+				&__heading {
+					font-size: 18px;
+				}
+				&__value {
+					font-size: 14px;
+					&-sub {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+}

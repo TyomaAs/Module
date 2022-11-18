@@ -1,0 +1,76 @@
+.footer {
+	width: 100%;
+	min-height: 48px;
+	margin-top: 50px;
+	.container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		@media screen and (max-width: $tablet) {
+			align-items: center;
+		}
+	}
+	&__social {
+		display: inline-flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		column-gap: 22px;
+		& .social {
+			&__item {
+				transition: all 0.3s ease-in-out;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				&:hover {
+					transform: scale(1.4);
+					&.facebook {
+						box-shadow: 0px 0px 5px rgb(0, 121, 235), 0px 0px 10px rgb(0, 121, 235) inset;
+					}
+					&.twitter {
+						box-shadow: 0px 0px 5px rgb(0, 188, 235), 0px 0px 10px rgb(0, 188, 235) inset;
+					}
+					&.instagram {
+						box-shadow: 0px 0px 5px rgb(214, 19, 217), 0px 0px 10px rgb(214, 19, 217) inset;
+					}
+					&.youtube {
+						box-shadow: 0px 0px 5px rgb(229, 7, 7), 0px 0px 10px rgb(229, 7, 7) inset;
+					}
+				}
+			}
+		}
+	}
+	&__slider {
+		display: inline-flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 30px;
+		&-item {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: $white;
+			transition: all 0.3s ease-in-out;
+			&.choicen {
+				width: 10px;
+				height: 10px;
+			}
+			&:hover {
+				background-color: $dim-red;
+				box-shadow: 0px 0px 5px $white;
+				&.choicen {
+					background-color: $white;
+					box-shadow: 0px 0px 0px $white;
+				}
+			}
+		}
+		@media screen and (max-width: $tablet) {
+			column-gap: 5vw;
+		}
+	}
+}
